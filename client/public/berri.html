@@ -55,7 +55,7 @@ a{text-decoration:none;color:inherit}
 .hero-stars{display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(249,180,210,.6)}
 .hero-stars .gold{color:var(--berry-gold)}
 .hero-product{display:flex;justify-content:center}
-.hero-product img{width:clamp(200px,20vw,320px);filter:drop-shadow(0 20px 60px rgba(232,77,138,.35));animation:float 5s ease-in-out infinite}
+.hero-product img{width:clamp(320px,32vw,520px);filter:drop-shadow(0 20px 60px rgba(232,77,138,.35));animation:floatRotate 6s ease-in-out infinite}
 
 /* Marquee */
 .marquee-wrap{background:var(--berry-pink);padding:14px 0;overflow:hidden}
@@ -179,6 +179,7 @@ a{text-decoration:none;color:inherit}
 
 /* Animations */
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes floatRotate{0%{transform:translateY(0) rotate(0deg)}25%{transform:translateY(-10px) rotate(3deg)}50%{transform:translateY(-16px) rotate(0deg)}75%{transform:translateY(-10px) rotate(-3deg)}100%{transform:translateY(0) rotate(0deg)}}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* Scroll reveal */
@@ -190,7 +191,7 @@ a{text-decoration:none;color:inherit}
 
 /* Hero entrance */
 .hero-text{opacity:0;transform:translateY(30px);animation:fadeUp .9s ease forwards}
-.hero-product img{opacity:0;transform:translateY(40px) rotate(-5deg);animation:fadeUpRotate 1s ease .3s forwards}
+.hero-product img{opacity:0;transform:translateY(40px) rotate(-5deg);animation:fadeUpRotate 1s ease .3s forwards, floatRotate 6s ease-in-out 1.3s infinite}
 @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
 @keyframes fadeUpRotate{to{opacity:1;transform:translateY(0) rotate(0deg)}}
 
@@ -198,7 +199,7 @@ a{text-decoration:none;color:inherit}
 @media(max-width:768px){
 .hero-inner{grid-template-columns:1fr;align-items:flex-end}
 .hero-product{order:-1}
-.hero-product img{width:180px}
+.hero-product img{width:260px}
 .narrative-grid{grid-template-columns:1fr}
 .product-grid{grid-template-columns:1fr}
 .specs-bar{grid-template-columns:repeat(2,1fr)}
