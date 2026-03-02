@@ -75,8 +75,8 @@ a{text-decoration:none;color:inherit}
 .narrative-desc{color:#6b4f6b;font-size:clamp(16px,1.4vw,20px);line-height:1.6;max-width:600px}
 .narrative-grid{display:grid;grid-template-columns:5fr 7fr;gap:40px;align-items:center;margin-top:96px}
 .narrative-img{aspect-ratio:4/5;border-radius:2rem;overflow:hidden;background:var(--berry-blush);position:relative;display:flex;align-items:center;justify-content:center}
-.narrative-img img{width:70%;object-fit:contain}
-.narrative-note{position:absolute;bottom:-24px;left:-16px;background:#fff;border-radius:12px;padding:16px;box-shadow:var(--shadow-float);border:1px solid rgba(0,0,0,.06);font-family:'Caveat',cursive;font-size:20px;color:var(--berry-deep);transform:rotate(-3deg)}
+.narrative-img img{width:100%;height:100%;object-fit:cover}
+.narrative-note{position:absolute;bottom:16px;left:16px;background:#fff;border-radius:12px;padding:16px 20px;box-shadow:var(--shadow-float);border:1px solid rgba(0,0,0,.06);font-family:'Caveat',cursive;font-size:20px;color:var(--berry-deep);transform:rotate(-3deg);white-space:nowrap;z-index:5}
 .narrative-cards{display:flex;flex-direction:column;gap:32px}
 .card-problem{background:rgba(244,230,240,.6);border-radius:16px;padding:32px;border:1px solid rgba(0,0,0,.06)}
 .card-problem h3{font-family:'DM Serif Display',serif;font-size:24px;color:var(--berry-deep);margin-bottom:12px}
