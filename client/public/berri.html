@@ -78,8 +78,18 @@ a{text-decoration:none;color:inherit}
 .section-title em{background:var(--gradient-berry);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-style:italic}
 
 /* Narrative */
-.narrative-desc{color:#6b4f6b;font-size:clamp(16px,1.4vw,20px);line-height:1.6;max-width:600px}
-.narrative-grid{display:grid;grid-template-columns:5fr 7fr;gap:40px;align-items:center;margin-top:96px}
+.narrative-top{display:grid;grid-template-columns:55% 45%;gap:48px;align-items:center;margin-bottom:96px}
+.narrative-top-text{display:flex;flex-direction:column;gap:20px}
+.narrative-label-wrap{display:flex;flex-direction:column;gap:12px}
+.narrative-label-line{width:40px;height:2px;background:var(--berry-pink)}
+.narrative-desc{color:#6b4f6b;font-size:clamp(16px,1.4vw,18px);line-height:1.7}
+.narrative-desc p+p{margin-top:20px}
+.narrative-cta-link{display:inline-flex;align-items:center;gap:6px;color:var(--berry-pink);font-size:15px;font-weight:600;margin-top:8px;transition:all .2s}
+.narrative-cta-link:hover{text-decoration:underline}
+.narrative-lifestyle{position:relative;border-radius:18px;overflow:visible}
+.narrative-lifestyle img{width:100%;border-radius:18px;box-shadow:0 8px 40px rgba(61,20,64,.1)}
+.narrative-lifestyle-note{position:absolute;bottom:-12px;right:16px;font-family:'Caveat',cursive;font-size:14px;color:var(--berry-pink);transform:rotate(-3deg);white-space:nowrap}
+.narrative-grid{display:grid;grid-template-columns:5fr 7fr;gap:40px;align-items:center}
 .narrative-img{aspect-ratio:4/5;border-radius:2rem;overflow:hidden;background:var(--berry-blush);position:relative;display:flex;align-items:center;justify-content:center}
 .narrative-img img{width:100%;height:100%;object-fit:cover}
 .narrative-note{position:absolute;bottom:16px;left:16px;background:#fff;border-radius:12px;padding:16px 20px;box-shadow:var(--shadow-float);border:1px solid rgba(0,0,0,.06);font-family:'Caveat',cursive;font-size:20px;color:var(--berry-deep);transform:rotate(-3deg);white-space:nowrap;z-index:5}
@@ -207,6 +217,8 @@ a{text-decoration:none;color:inherit}
 .hero-inner{grid-template-columns:1fr;align-items:flex-end;padding:60px 24px 40px}
 .hero-product{order:-1}
 .hero-product img{width:280px}
+.narrative-top{grid-template-columns:1fr}
+.narrative-lifestyle{order:-1}
 .narrative-grid{grid-template-columns:1fr}
 .product-grid{grid-template-columns:1fr}
 .specs-bar{grid-template-columns:repeat(2,1fr)}
@@ -298,12 +310,26 @@ a{text-decoration:none;color:inherit}
 </div>
 
 <!-- Narrative -->
-<section class="section" style="background:var(--berry-cream)">
+<section class="section" style="background:var(--berry-cream);padding:100px 24px">
 <div class="section-inner">
-<div class="reveal" style="max-width:720px;margin-bottom:96px">
+<div class="narrative-top reveal">
+<div class="narrative-top-text">
+<div class="narrative-label-wrap">
+<div class="narrative-label-line"></div>
 <p class="section-label">A different kind of pleasure</p>
+</div>
 <h2 class="section-title">You've Been Taught to Rush. Berri Teaches You to <em>Stay.</em></h2>
-<p class="narrative-desc">The best sensations are not the ones that hit you all at once. They are the ones that build. Slowly. Deliberately. Until every nerve is tuned in and your whole body is asking for more. That is what Berri’s tapping technology was designed for. Instead of constant buzzing that overwhelms your nerve endings, Berri delivers precise, rhythmic micro-taps. Each one lands exactly where it should. Each wave rises a little higher than the last. Your body responds on its own terms. You stay present. You stay in control. And when the release finally comes, you feel it everywhere. This is not about getting there fast. It is about arriving so completely that nothing else exists.</p>
+<div class="narrative-desc">
+<p>The best sensations are not the ones that hit you all at once. They are the ones that build. Slowly. Deliberately. Until every nerve is tuned in and your whole body is asking for more.</p>
+<p>That is what Berri’s tapping technology was designed for. Instead of constant buzzing that overwhelms your nerve endings, Berri delivers precise, rhythmic micro-taps. Each one lands exactly where it should. Each wave rises a little higher than the last.</p>
+<p>Your body responds on its own terms. You stay present. You stay in control. And when the release finally comes, you feel it everywhere. This is not about getting there fast. It is about arriving so completely that nothing else exists.</p>
+</div>
+<a href="https://hellonancy.com/products/berri" class="narrative-cta-link">Feel the difference →</a>
+</div>
+<div class="narrative-lifestyle">
+<img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663037635287/TefqpEWTkycJeNJz9rmhNF/Berripic2_77d9ddcb.png" alt="Berri tapping massager on bed sheets — cute enough for your nightstand">
+<span class="narrative-lifestyle-note">cute enough for your nightstand ♡</span>
+</div>
 </div>
 <div class="narrative-grid reveal">
 <div class="narrative-img">
