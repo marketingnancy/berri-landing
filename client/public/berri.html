@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berri — The Art of Almost | Hello Nancy</title>
+<meta name="description" content="A raspberry-shaped tapping clitoral massager designed for the buildup — not the rush. Patent Pending TapSphere™ Technology. $95.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--berry-deep:#4A1942;--berry-purple:#6B3A6B;--berry-pink:#E84D8A;--berry-hot:#FF3D7F;
+--berry-light:#F9B4D2;--berry-blush:#FFF0F5;--berry-cream:#FFF8F0;--berry-gold:#F0C040;
+--berry-red:#C62E65;--berry-green:#7BC67E;--berry-leaf:#3D8B3D;
+--gradient-berry:linear-gradient(135deg,#E84D8A,#FF3D7F);
+--gradient-deep:linear-gradient(135deg,#4A1942,#6B3A6B);
+--gradient-cta:linear-gradient(135deg,#FF3D7F,#E84D8A,#4A1942);
+--shadow-berry:0 8px 32px -8px rgba(232,77,138,0.3);
+--shadow-deep:0 16px 48px -12px rgba(74,25,66,0.25);
+--shadow-float:0 24px 64px -16px rgba(74,25,66,0.15);
+--shadow-glow:0 0 40px rgba(232,77,138,0.2);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;color:#1a0a1a;background:#FFF8F0;-webkit-font-smoothing:antialiased}
+.font-serif{font-family:'DM Serif Display',serif}
+.font-hand{font-family:'Caveat',cursive}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* Top Bar */
+.topbar{background:var(--berry-deep);color:#fff;text-align:center;font-size:13px;font-weight:500;padding:10px 16px;letter-spacing:.03em}
+.topbar-inner{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
+.topbar-inner .dot{opacity:.3}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,248,240,.92);backdrop-filter:blur(24px);border-bottom:1px solid rgba(0,0,0,.06)}
+.nav-inner{max-width:1152px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:22px;color:var(--berry-deep);letter-spacing:-.02em}
+.nav-cta{background:var(--gradient-cta);color:#fff;padding:8px 20px;border-radius:999px;font-size:14px;font-weight:600;transition:transform .2s;box-shadow:var(--shadow-berry)}
+.nav-cta:hover{transform:scale(1.05)}
+
+/* Hero */
+.hero{position:relative;min-height:95vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://cdn.shopify.com/s/files/1/0693/7284/5498/files/Berri_Lifestyle_1.jpg?v=1738144620') center bottom/cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(74,25,66,.8),rgba(74,25,66,.3),transparent)}
+.hero-inner{position:relative;z-index:10;max-width:1152px;margin:0 auto;padding:64px 24px;width:100%;display:grid;grid-template-columns:3fr 2fr;gap:32px;align-items:end}
+.hero-text{display:flex;flex-direction:column;gap:24px}
+.hero-intro{font-family:'Caveat',cursive;color:var(--berry-light);font-size:clamp(24px,3vw,30px)}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(48px,7vw,96px);color:#fff;line-height:.95;letter-spacing:-.02em}
+.hero h1 em{color:var(--berry-pink);font-style:italic}
+.hero-desc{color:rgba(249,180,210,.8);font-size:clamp(16px,1.6vw,20px);max-width:440px;line-height:1.6}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px;padding-top:8px}
+.hero-btn{background:var(--gradient-berry);color:#fff;padding:16px 32px;border-radius:999px;font-size:16px;font-weight:700;box-shadow:var(--shadow-glow);transition:transform .2s}
+.hero-btn:hover{transform:scale(1.05)}
+.hero-stars{display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(249,180,210,.6)}
+.hero-stars .gold{color:var(--berry-gold)}
+.hero-product{display:flex;justify-content:center}
+.hero-product img{width:clamp(200px,20vw,320px);filter:drop-shadow(0 20px 60px rgba(232,77,138,.35));animation:float 5s ease-in-out infinite}
+
+/* Marquee */
+.marquee-wrap{background:var(--berry-pink);padding:14px 0;overflow:hidden}
+.marquee-track{display:flex;white-space:nowrap;animation:marquee 30s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+.marquee-item{font-size:14px;font-weight:600;color:#fff;letter-spacing:.03em;margin:0 32px;display:flex;align-items:center;gap:12px}
+.marquee-item .sep{color:rgba(255,255,255,.4);font-size:12px}
+
+/* Section shared */
+.section{padding:112px 24px}
+.section-inner{max-width:1152px;margin:0 auto}
+.section-label{color:var(--berry-pink);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.15em;margin-bottom:16px}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(32px,4.5vw,56px);color:var(--berry-deep);line-height:1.1;margin-bottom:24px}
+.section-title em{background:var(--gradient-berry);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-style:italic}
+
+/* Narrative */
+.narrative-desc{color:#6b4f6b;font-size:clamp(16px,1.4vw,20px);line-height:1.6;max-width:600px}
+.narrative-grid{display:grid;grid-template-columns:5fr 7fr;gap:40px;align-items:center;margin-top:96px}
+.narrative-img{aspect-ratio:4/5;border-radius:2rem;overflow:hidden;background:var(--berry-blush);position:relative;display:flex;align-items:center;justify-content:center}
+.narrative-img img{width:70%;object-fit:contain}
+.narrative-note{position:absolute;bottom:-24px;left:-16px;background:#fff;border-radius:12px;padding:16px;box-shadow:var(--shadow-float);border:1px solid rgba(0,0,0,.06);font-family:'Caveat',cursive;font-size:20px;color:var(--berry-deep);transform:rotate(-3deg)}
+.narrative-cards{display:flex;flex-direction:column;gap:32px}
+.card-problem{background:rgba(244,230,240,.6);border-radius:16px;padding:32px;border:1px solid rgba(0,0,0,.06)}
+.card-problem h3{font-family:'DM Serif Display',serif;font-size:24px;color:var(--berry-deep);margin-bottom:12px}
+.card-problem p{color:#6b4f6b;line-height:1.6}
+.card-solution{background:var(--gradient-deep);border-radius:16px;padding:32px;color:#fff}
+.card-solution h3{font-family:'DM Serif Display',serif;font-size:24px;margin-bottom:12px}
+.card-solution p{color:var(--berry-light);line-height:1.6;margin-bottom:16px}
+.pill-row{display:flex;flex-wrap:wrap;gap:12px}
+.pill{background:rgba(255,255,255,.1);backdrop-filter:blur(8px);padding:6px 12px;border-radius:999px;font-size:12px;font-weight:500}
+
+/* Product Showcase */
+.showcase{padding:112px 24px;background:var(--berry-deep);position:relative;overflow:hidden}
+.showcase::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(232,77,138,.3),transparent)}
+.showcase .section-label{color:var(--berry-pink)}
+.showcase .section-title{color:#fff}
+.showcase .section-title em{color:var(--berry-pink);-webkit-text-fill-color:var(--berry-pink)}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:80px}
+.product-card{background:rgba(107,58,107,.3);border-radius:24px;padding:32px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;min-height:420px;position:relative}
+.product-card.featured{background:linear-gradient(to bottom,rgba(232,77,138,.2),rgba(107,58,107,.2))}
+.product-card .badge{position:absolute;top:16px;right:16px;background:var(--berry-pink);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:999px;text-transform:uppercase;letter-spacing:.06em}
+.product-card .img-wrap{flex:1;display:flex;align-items:center}
+.product-card img{width:clamp(160px,14vw,220px);filter:drop-shadow(0 10px 30px rgba(0,0,0,.2))}
+.product-card .card-label{text-align:center;margin-top:24px}
+.product-card .card-label h3{color:#fff;font-weight:600;font-size:18px;margin-bottom:4px}
+.product-card .card-label p{color:rgba(249,180,210,.6);font-size:14px}
+.specs-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.spec{background:rgba(255,255,255,.05);backdrop-filter:blur(8px);border-radius:12px;padding:16px 20px;text-align:center}
+.spec .spec-label{color:rgba(249,180,210,.4);font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.spec .spec-value{color:#fff;font-weight:600;font-size:14px}
+
+/* Pace */
+.pace-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px}
+.pace-card{border-radius:16px;border:1px solid;padding:32px;transition:box-shadow .3s}
+.pace-card:hover{box-shadow:var(--shadow-float)}
+.pace-card.card-light{background:rgba(249,180,210,.15);border-color:rgba(249,180,210,.3)}
+.pace-card.card-pink{background:rgba(232,77,138,.1);border-color:rgba(232,77,138,.3);transform:scale(1.05);box-shadow:var(--shadow-berry)}
+.pace-card.card-deep{background:rgba(74,25,66,.05);border-color:rgba(74,25,66,.2)}
+.pace-time{font-family:'DM Serif Display',serif;font-size:36px;margin-bottom:16px}
+.pace-card.card-pink .pace-time{color:var(--berry-pink)}
+.pace-card:not(.card-pink) .pace-time{color:var(--berry-deep)}
+.pace-name{font-weight:600;font-size:18px;margin-bottom:8px}
+.pace-desc{color:#6b4f6b;font-size:14px;line-height:1.6}
+.pace-popular{display:inline-block;margin-top:16px;color:var(--berry-pink);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+.combo-tip{margin-top:48px;background:#fff;border-radius:16px;padding:24px 32px;border:1px solid rgba(0,0,0,.06);max-width:680px;margin-left:auto;margin-right:auto;text-align:center;font-size:14px;color:#6b4f6b;line-height:1.6}
+.combo-tip strong{color:#1a0a1a}
+.combo-tip a{color:var(--berry-pink);font-weight:600}
+.combo-tip a:hover{text-decoration:underline}
+
+/* Reviews */
+.reviews{padding:112px 24px;background:rgba(244,230,240,.3)}
+.reviews-header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:56px}
+.reviews-link{color:var(--berry-pink);font-size:14px;font-weight:600}
+.reviews-link:hover{text-decoration:underline}
+.reviews-grid{columns:1;gap:24px}
+.review-card{break-inside:avoid;background:#fff;border-radius:16px;padding:24px;border:1px solid rgba(0,0,0,.06);margin-bottom:24px;transition:all .3s}
+.review-card:hover{box-shadow:var(--shadow-berry);border-color:rgba(232,77,138,.2)}
+.review-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.review-stars{color:var(--berry-gold);font-size:14px}
+.review-tag{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--berry-pink);font-weight:700;background:rgba(232,77,138,.08);padding:4px 10px;border-radius:999px}
+.review-text{font-size:14px;line-height:1.6;margin-bottom:16px;color:#1a0a1a}
+.review-name{font-size:12px;color:#6b4f6b;font-weight:500}
+
+/* FAQ */
+.faq{padding:112px 24px;background:var(--berry-cream)}
+.faq-list{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq-item{background:#fff;border-radius:12px;border:1px solid rgba(0,0,0,.06);overflow:hidden;transition:all .3s}
+.faq-item.open{box-shadow:var(--shadow-berry);border-color:rgba(232,77,138,.2)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 24px;font-size:15px;font-weight:600;color:#1a0a1a;cursor:pointer;background:none;border:none;font-family:inherit;text-align:left;transition:color .2s}
+.faq-q:hover{color:var(--berry-pink)}
+.faq-q .icon{font-size:20px;transition:transform .3s;color:#6b4f6b}
+.faq-item.open .faq-q .icon{transform:rotate(45deg)}
+.faq-a{padding:0 24px 20px;font-size:14px;color:#6b4f6b;line-height:1.6;display:none}
+.faq-item.open .faq-a{display:block}
+
+/* CTA */
+.closing{position:relative;padding:112px 24px;overflow:hidden;text-align:center}
+.closing-bg{position:absolute;inset:0;background:linear-gradient(to bottom right,var(--berry-blush),rgba(249,180,210,.3),var(--berry-cream))}
+.closing-blob1{position:absolute;bottom:-80px;left:-80px;width:384px;height:384px;background:rgba(232,77,138,.1);border-radius:50%;filter:blur(60px)}
+.closing-blob2{position:absolute;top:-80px;right:-80px;width:320px;height:320px;background:rgba(249,180,210,.2);border-radius:50%;filter:blur(60px)}
+.closing-inner{position:relative;z-index:10;max-width:720px;margin:0 auto}
+.closing img{width:clamp(144px,12vw,176px);margin:0 auto 40px;filter:drop-shadow(0 10px 30px rgba(0,0,0,.15));animation:float 5s ease-in-out infinite}
+.closing .font-hand{font-family:'Caveat',cursive;color:var(--berry-pink);font-size:clamp(24px,3vw,30px);margin-bottom:16px}
+.closing h2{font-family:'DM Serif Display',serif;font-size:clamp(36px,5vw,60px);color:var(--berry-deep);line-height:1.1;margin-bottom:24px}
+.closing h2 em{background:var(--gradient-berry);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-style:italic}
+.closing .closing-desc{color:#6b4f6b;font-size:18px;max-width:520px;margin:0 auto 40px;line-height:1.6}
+.closing-btn{display:inline-flex;background:var(--gradient-cta);color:#fff;padding:20px 40px;border-radius:999px;font-size:18px;font-weight:700;box-shadow:var(--shadow-deep);transition:all .2s}
+.closing-btn:hover{transform:scale(1.05);box-shadow:var(--shadow-glow)}
+.closing-meta{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:24px;font-size:14px;color:#6b4f6b}
+.closing-meta .gold{color:var(--berry-gold)}
+.closing-meta .save{color:var(--berry-pink);font-weight:600}
+
+/* Footer */
+.footer{background:var(--berry-deep);padding:40px 24px}
+.footer-inner{max-width:1152px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-brand{font-family:'DM Serif Display',serif;font-size:18px;color:#fff}
+.footer-copy{font-size:12px;color:rgba(249,180,210,.4);margin-top:2px}
+.footer-links{display:flex;gap:24px}
+.footer-links a{font-size:12px;color:rgba(249,180,210,.4);transition:color .2s}
+.footer-links a:hover{color:var(--berry-light)}
+
+/* Animations */
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+/* Hero entrance */
+.hero-text{opacity:0;transform:translateY(30px);animation:fadeUp .9s ease forwards}
+.hero-product img{opacity:0;transform:translateY(40px) rotate(-5deg);animation:fadeUpRotate 1s ease .3s forwards}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUpRotate{to{opacity:1;transform:translateY(0) rotate(0deg)}}
+
+/* Responsive */
+@media(max-width:768px){
+.hero-inner{grid-template-columns:1fr;align-items:flex-end}
+.hero-product{order:-1}
+.hero-product img{width:180px}
+.narrative-grid{grid-template-columns:1fr}
+.product-grid{grid-template-columns:1fr}
+.specs-bar{grid-template-columns:repeat(2,1fr)}
+.pace-grid{grid-template-columns:1fr}
+.pace-card.card-pink{transform:none}
+.reviews-grid{columns:1}
+.topbar-inner .dot{display:none}
+}
+@media(min-width:769px) and (max-width:1024px){
+.product-grid{grid-template-columns:repeat(2,1fr)}
+.product-grid>:last-child{grid-column:span 2;max-width:50%;margin:0 auto}
+}
+@media(min-width:769px){
+.reviews-grid{columns:3}
+}
+</style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="topbar">
+<div class="topbar-inner">
+<span>🤐 Discreet Packaging</span><span class="dot">·</span>
+<span>✈️ Free Worldwide Shipping</span><span class="dot">·</span>
+<span>🛡️ 30-Day Guarantee</span>
+</div>
+</div>
+
+<!-- Nav -->
+<nav class="nav">
+<div class="nav-inner">
+<a href="https://hellonancy.com" class="nav-logo">Nancy</a>
+<a href="https://hellonancy.com/products/berri" class="nav-cta">Shop Berri — $95</a>
+</div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-overlay"></div>
+<div class="hero-inner">
+<div class="hero-text">
+<p class="hero-intro">Introducing Berri</p>
+<h1 class="font-serif">The Art<br>of <em>Almost</em></h1>
+<p class="hero-desc">A raspberry-shaped tapping massager designed for the buildup — not the rush. Patent&nbsp;Pending TapSphere™ Technology.</p>
+<div class="hero-actions">
+<a href="https://hellonancy.com/products/berri" class="hero-btn">Discover Berri — $95</a>
+<div class="hero-stars"><span class="gold">★★★★★</span><span>4.5 · 102 reviews</span></div>
+</div>
+</div>
+<div class="hero-product">
+<img src="https://cdn.shopify.com/s/files/1/0693/7284/5498/files/berri-product-1.png?v=1738144620" alt="Berri — raspberry-shaped tapping clitoral massager by Hello Nancy">
+</div>
+</div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee-wrap">
+<div class="marquee-track">
+<span class="marquee-item">Patent Pending TapSphere™ <span class="sep">✦</span></span>
+<span class="marquee-item">12 Rhythmic Patterns <span class="sep">✦</span></span>
+<span class="marquee-item">Waterproof IPX7 <span class="sep">✦</span></span>
+<span class="marquee-item">120-Min Battery <span class="sep">✦</span></span>
+<span class="marquee-item">Medical-Grade Silicone <span class="sep">✦</span></span>
+<span class="marquee-item">Whisper Quiet <span class="sep">✦</span></span>
+<span class="marquee-item">USB-C Charging <span class="sep">✦</span></span>
+<span class="marquee-item">Perfect for Edging <span class="sep">✦</span></span>
+<span class="marquee-item">Patent Pending TapSphere™ <span class="sep">✦</span></span>
+<span class="marquee-item">12 Rhythmic Patterns <span class="sep">✦</span></span>
+<span class="marquee-item">Waterproof IPX7 <span class="sep">✦</span></span>
+<span class="marquee-item">120-Min Battery <span class="sep">✦</span></span>
+<span class="marquee-item">Medical-Grade Silicone <span class="sep">✦</span></span>
+<span class="marquee-item">Whisper Quiet <span class="sep">✦</span></span>
+<span class="marquee-item">USB-C Charging <span class="sep">✦</span></span>
+<span class="marquee-item">Perfect for Edging <span class="sep">✦</span></span>
+</div>
+</div>
+
+<!-- Narrative -->
+<section class="section" style="background:var(--berry-cream)">
+<div class="section-inner">
+<div class="reveal" style="max-width:720px;margin-bottom:96px">
+<p class="section-label">A different kind of pleasure</p>
+<h2 class="section-title">What if the best part <em>isn't</em> the finish line?</h2>
+<p class="narrative-desc">Most toys are designed to get you there fast. Berri is designed for the journey. Rhythmic tapping that rises, eases, and rises again — so you stay in the moment instead of racing past it.</p>
+</div>
+<div class="narrative-grid reveal">
+<div class="narrative-img">
+<img src="https://cdn.shopify.com/s/files/1/0693/7284/5498/files/berri-product-2.png?v=1738144620" alt="Berri tapping massager closeup showing ergonomic raspberry design">
+<div class="narrative-note">cute enough for your nightstand ♡</div>
+</div>
+<div class="narrative-cards">
+<div class="card-problem">
+<h3 class="font-serif">The numbness trap</h3>
+<p>Traditional vibrators overwhelm your nerve endings with constant buzzing. The result? Desensitization, frustration, and pleasure that feels... flat. You deserve better than that.</p>
+</div>
+<div class="card-solution">
+<h3 class="font-serif">The Berri difference</h3>
+<p>TapSphere™ Technology uses rhythmic micro-tapping instead of vibration. Gentle taps stimulate without overstimulating — creating a slow wave of sensation that builds naturally, the way your body wants.</p>
+<div class="pill-row">
+<span class="pill">Tapping, not buzzing</span>
+<span class="pill">Build, don't numb</span>
+<span class="pill">Your pace, always</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Product Showcase -->
+<section class="showcase">
+<div class="section-inner reveal" style="text-align:center">
+<p class="section-label">Meet your new favorite</p>
+<h2 class="section-title">Shaped like a raspberry.<br><em>Feels like a dream.</em></h2>
+</div>
+<div class="section-inner">
+<div class="product-grid reveal">
+<div class="product-card">
+<div class="img-wrap"><img src="https://cdn.shopify.com/s/files/1/0693/7284/5498/files/berri-product-3.png?v=1738144620" alt="Berri waterproof design"></div>
+<div class="card-label"><h3>Waterproof</h3><p>IPX7 rated. Bath-ready, shower-safe.</p></div>
+</div>
+<div class="product-card featured">
+<span class="badge">12 patterns</span>
+<div class="img-wrap"><img src="https://cdn.shopify.com/s/files/1/0693/7284/5498/files/berri-product-5.png?v=1738144620" alt="Berri multiple angles" style="animation:float 4s ease-in-out infinite"></div>
+<div class="card-label"><h3>12 Unique Rhythms</h3><p>Each pattern has its own personality. Explore until you find your favorite.</p></div>
+</div>
+<div class="product-card">
+<div class="img-wrap"><img src="https://cdn.shopify.com/s/files/1/0693/7284/5498/files/berri-product-4.png?v=1738144620" alt="Berri USB-C charging"></div>
+<div class="card-label"><h3>120 Minutes</h3><p>Weeks of play on a single USB-C charge.</p></div>
+</div>
+</div>
+<div class="specs-bar">
+<div class="spec"><p class="spec-label">Material</p><p class="spec-value">Medical Silicone</p></div>
+<div class="spec"><p class="spec-label">Size</p><p class="spec-value">6.9 × 6.9 cm</p></div>
+<div class="spec"><p class="spec-label">Charge Time</p><p class="spec-value">90 min</p></div>
+<div class="spec"><p class="spec-label">Noise Level</p><p class="spec-value">< 40 dB</p></div>
+</div>
+</div>
+</section>
+
+<!-- Pace Section -->
+<section class="section" style="background:var(--berry-cream)">
+<div class="section-inner">
+<div class="reveal" style="max-width:680px;margin-bottom:64px">
+<p class="section-label">Your pace. Your rules.</p>
+<h2 class="section-title">How long is <em>your</em> ideal session?</h2>
+<p class="narrative-desc">There's no right answer. Berri adapts to you — whether you have thirty minutes or the whole evening.</p>
+</div>
+<div class="pace-grid reveal">
+<div class="pace-card card-light">
+<div class="pace-time">30 min</div>
+<h3 class="pace-name">The Tease</h3>
+<p class="pace-desc">A gentle warmup. Build toward the edge, ease off, then return. Perfect for winding down after a long day.</p>
+</div>
+<div class="pace-card card-pink">
+<div class="pace-time">60 min</div>
+<h3 class="pace-name">The Deep Dive</h3>
+<p class="pace-desc">Multiple build cycles. Time to explore different patterns, shift positions, and discover new sweet spots.</p>
+<span class="pace-popular">★ Most popular</span>
+</div>
+<div class="pace-card card-deep">
+<div class="pace-time">90+ min</div>
+<h3 class="pace-name">The Mastery</h3>
+<p class="pace-desc">For those who truly enjoy the art of anticipation. Advanced control, extended edging, and an unforgettable finish.</p>
+</div>
+</div>
+<div class="combo-tip">
+<strong>💡 The combo hack:</strong> Many users build with Berri for 20–30 minutes, then switch to the <a href="https://hellonancy.com/products/lem">Lem</a> to finish with suction. The contrast is <em>unreal</em>.
+</div>
+</div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews">
+<div class="section-inner">
+<div class="reviews-header reveal">
+<div>
+<p class="section-label">What real users say</p>
+<h2 class="section-title">102 reviews. <em>4.5 stars.</em></h2>
+</div>
+<a href="https://hellonancy.com/products/berri#looxReviews" class="reviews-link">Read all reviews →</a>
+</div>
+<div class="reviews-grid">
+<div class="review-card">
+<div class="review-top"><span class="review-stars">★★★★★</span><span class="review-tag">Verified Buyer</span></div>
+<p class="review-text">"The slow build is everything. I've tried suction toys and they're too intense for me. This is the gentle alternative I didn't know I needed."</p>
+<p class="review-name">— Erica S.</p>
+</div>
+<div class="review-card">
+<div class="review-top"><span class="review-stars">★★★★★</span><span class="review-tag">Couples</span></div>
+<p class="review-text">"My partner and I love using this together. The tapping is so different from anything we've tried — it became our new favorite foreplay ritual."</p>
+<p class="review-name">— Hannah R.</p>
+</div>
+<div class="review-card">
+<div class="review-top"><span class="review-stars">★★★★★</span><span class="review-tag">First Timer</span></div>
+<p class="review-text">"I was nervous buying my first toy. The raspberry design made me actually excited to try it. It's cute, non-intimidating, and feels incredible."</p>
+<p class="review-name">— Yvonne H.</p>
+</div>
+<div class="review-card">
+<div class="review-top"><span class="review-stars">★★★★★</span><span class="review-tag">Power User</span></div>
+<p class="review-text">"12 patterns and each one genuinely feels different. I've been exploring for weeks. The battery just keeps going too — I've charged it twice total."</p>
+<p class="review-name">— Katya T.</p>
+</div>
+<div class="review-card">
+<div class="review-top"><span class="review-stars">★★★★★</span><span class="review-tag">Berri + Lem</span></div>
+<p class="review-text">"I use Berri to build up then switch to my Lem to finish. The combo is absolutely unreal. Honestly the best purchase of the year."</p>
+<p class="review-name">— Marissa L.</p>
+</div>
+<div class="review-card">
+<div class="review-top"><span class="review-stars">★★★★★</span><span class="review-tag">Discreet</span></div>
+<p class="review-text">"Whisper quiet. I live with roommates and this is the first toy I've felt totally comfortable using. Plus it's waterproof — bath time just got better."</p>
+<p class="review-name">— Jade K.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+<div class="section-inner" style="text-align:center;margin-bottom:56px">
+<p class="section-label">Questions</p>
+<h2 class="section-title">Everything you need to know</h2>
+</div>
+<div class="faq-list">
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Who is Berri designed for?<span class="icon">+</span></button><div class="faq-a">Anyone who enjoys building arousal gradually — whether you're exploring toys for the first time or you're experienced and want something different from vibration or suction. Berri's gentle tapping creates a completely unique sensation.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">How is Berri different from the Lem?<span class="icon">+</span></button><div class="faq-a">The Lem uses air suction for intense, focused climaxes. Berri uses rhythmic tapping for slow, intentional buildup. They're complementary — many users build with Berri then finish with the Lem.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is it really quiet?<span class="icon">+</span></button><div class="faq-a">Under 40 decibels — quieter than an electric toothbrush. You can use Berri with confidence, even with thin walls or sleeping partners nearby.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I use Berri in the bath?<span class="icon">+</span></button><div class="faq-a">Yes! IPX7 waterproof. Bath, shower, wherever the mood takes you. Just rinse with warm water and gentle soap after.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I start over underwear?<span class="icon">+</span></button><div class="faq-a">Absolutely. Many users prefer beginning over fabric for a gentler introduction, then transitioning to bare skin as they warm up. There's no wrong way to use Berri.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">What's included in the box?<span class="icon">+</span></button><div class="faq-a">The Berri massager, a USB-C charging cable, and a self-love guide. Everything arrives in completely discreet packaging — no logos, no product names visible.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do you offer returns?<span class="icon">+</span></button><div class="faq-a">Yes — 30-day satisfaction guarantee. If Berri isn't right for you, we'll take care of it. No questions, no hassle.</div></div>
+</div>
+</section>
+
+<!-- Closing CTA -->
+<section class="closing">
+<div class="closing-bg"></div>
+<div class="closing-blob1"></div>
+<div class="closing-blob2"></div>
+<div class="closing-inner">
+<img src="https://cdn.shopify.com/s/files/1/0693/7284/5498/files/berri-product-1.png?v=1738144620" alt="Berri Tapping Clitoral Massager">
+<p class="font-hand">your body already knows what it wants</p>
+<h2 class="font-serif">Let Berri take you there.<br><em>Slowly.</em></h2>
+<p class="closing-desc">Discreet packaging. Free worldwide shipping. 30-day satisfaction guarantee. First batch sold out — second batch now available.</p>
+<a href="https://hellonancy.com/products/berri" class="closing-btn">Get Berri — $95</a>
+<div class="closing-meta"><span class="gold">★★★★★</span><span>4.5 rating · 102 reviews</span><span class="save">Save 50%</span></div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-inner">
+<div>
+<p class="footer-brand font-serif">Nancy</p>
+<p class="footer-copy">© 2026 Hello Nancy. All rights reserved.</p>
+</div>
+<div class="footer-links">
+<a href="https://hellonancy.com/pages/about-us">About</a>
+<a href="https://hellonancy.com/blogs/sex-ed">Sex Ed</a>
+<a href="https://hellonancy.com/policies/privacy-policy">Privacy</a>
+<a href="https://hellonancy.com/policies/terms-of-service">Terms</a>
+</div>
+</div>
+</footer>
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.15, rootMargin: '-40px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
