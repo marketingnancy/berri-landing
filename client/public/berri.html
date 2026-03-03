@@ -353,7 +353,10 @@ a{text-decoration:none;color:inherit}
 .narrative-top-text .narrative-desc p{font-size:14px;line-height:1.6;margin-bottom:10px}
 .section-title{font-size:clamp(22px,6vw,28px);margin-bottom:12px}
 .narrative-label-wrap{margin-bottom:8px}
-.narrative-grid{grid-template-columns:1fr}
+.narrative-grid{grid-template-columns:1fr;gap:16px}
+.narrative-grid .narrative-img{max-height:180px;border-radius:14px}
+.narrative-grid .narrative-img img{height:180px;object-fit:cover}
+.narrative-grid[style*="padding:80px"]{padding:40px 0 !important}
 .product-grid{grid-template-columns:1fr;gap:10px;margin-top:16px}
 .product-card{flex-direction:row;padding:10px;gap:12px;border-radius:12px;align-items:center}
 .product-card .img-wrap{width:80px;min-width:80px;aspect-ratio:1/1;max-height:80px;border-radius:10px}
