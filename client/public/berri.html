@@ -331,9 +331,21 @@ a{text-decoration:none;color:inherit}
 
 /* Responsive */
 @media(max-width:768px){
-.hero-inner{grid-template-columns:1fr;align-items:flex-end;padding:60px 24px 40px}
-.hero-product{order:-1}
-.hero-product img{width:280px}
+.hero{min-height:auto}
+.hero-inner{grid-template-columns:1.1fr .9fr;align-items:center;padding:100px 20px 36px;gap:16px}
+.hero-product{order:0}
+.hero-product img{width:clamp(140px,38vw,200px)}
+.hero-badge{padding:4px 10px;font-size:9px;gap:5px;margin-bottom:0}
+.hero-badge .pulse{width:6px;height:6px}
+.hero h1{font-size:clamp(28px,7.5vw,38px);line-height:.92}
+.hero-text{gap:10px}
+.hero-desc .lead{font-size:13px;margin-bottom:4px}
+.hero-desc .body{display:none}
+.hero-btn{padding:14px 28px;font-size:14px;width:100%}
+.hero-cta-row{flex-direction:column;gap:8px;width:100%}
+.hero-microcopy{font-size:10px;text-align:center}
+.hero-stars{font-size:12px;justify-content:center}
+.hero-actions{gap:8px;padding-top:4px}
 .narrative-top{grid-template-columns:1fr}
 .narrative-lifestyle{order:-1}
 .narrative-grid{grid-template-columns:1fr}
