@@ -156,18 +156,34 @@ a{text-decoration:none;color:inherit}
 .combo-tip a:hover{text-decoration:underline}
 
 /* Reviews */
-.reviews{padding:112px 24px;background:rgba(244,230,240,.3)}
-.reviews-header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:56px}
-.reviews-link{color:var(--berry-pink);font-size:14px;font-weight:600}
-.reviews-link:hover{text-decoration:underline}
-.reviews-grid{columns:1;gap:24px}
-.review-card{break-inside:avoid;background:#fff;border-radius:16px;padding:24px;border:1px solid rgba(0,0,0,.06);margin-bottom:24px;transition:all .3s}
+.reviews{padding:60px 24px;background:rgba(244,230,240,.3)}
+.reviews-header{text-align:center;margin-bottom:24px}
+.reviews-rating-bar{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:24px}
+.reviews-rating-bar .gold{color:var(--berry-gold);font-size:24px}
+.reviews-rating-bar .rating-text{font-size:20px;font-weight:700;color:#1a0a1a}
+.reviews-rating-bar .rating-count{font-size:14px;color:#6b4f6b}
+.reviews-carousel-wrap{position:relative;max-width:960px;margin:0 auto}
+.reviews-carousel{display:flex;gap:20px;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;padding:8px 0}
+.reviews-carousel::-webkit-scrollbar{display:none}
+.review-card{min-width:calc(33.333% - 14px);max-width:calc(33.333% - 14px);background:#fff;border-radius:16px;padding:24px;border:1px solid rgba(0,0,0,.06);transition:all .3s;flex-shrink:0;display:flex;flex-direction:column;min-height:200px;max-height:240px;overflow:hidden;box-sizing:border-box}
 .review-card:hover{box-shadow:var(--shadow-berry);border-color:rgba(232,77,138,.2)}
+.review-cta-card{min-width:calc(33.333% - 14px);max-width:calc(33.333% - 14px);background:linear-gradient(135deg,#3D1440,#6b2fa0);border-radius:16px;padding:24px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:200px;max-height:240px;box-sizing:border-box}
+.review-cta-card h3{color:#fff;font-size:18px;font-weight:700;margin-bottom:16px}
+.review-cta-card .cta-btn{display:inline-block;padding:12px 32px;background:linear-gradient(135deg,var(--berry-pink),var(--berry-deep));color:#fff;border-radius:999px;font-size:15px;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.review-cta-card .cta-btn:hover{transform:scale(1.05);box-shadow:0 4px 20px rgba(232,77,138,.4)}
+.review-cta-card .cta-sub{color:rgba(255,255,255,.7);font-size:12px;margin-top:10px}
+.carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 2px 8px rgba(0,0,0,.1);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:#3D1440;z-index:2;transition:all .2s}
+.carousel-arrow:hover{background:var(--berry-pink);color:#fff;border-color:var(--berry-pink)}
+.carousel-arrow.left{left:-20px}
+.carousel-arrow.right{right:-20px}
 .review-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
 .review-stars{color:var(--berry-gold);font-size:14px}
 .review-tag{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--berry-pink);font-weight:700;background:rgba(232,77,138,.08);padding:4px 10px;border-radius:999px}
-.review-text{font-size:14px;line-height:1.6;margin-bottom:16px;color:#1a0a1a}
+.review-text{font-size:14px;line-height:1.6;margin-bottom:16px;color:#1a0a1a;flex:1}
 .review-name{font-size:12px;color:#6b4f6b;font-weight:500}
+.reviews-link-bottom{text-align:center;margin-top:24px}
+.reviews-link{color:var(--berry-pink);font-size:14px;font-weight:600;text-decoration:none}
+.reviews-link:hover{text-decoration:underline}
 
 /* FAQ */
 .faq{padding:70px 24px;background:var(--berry-cream)}
@@ -247,15 +263,16 @@ a{text-decoration:none;color:inherit}
 .specs-bar{grid-template-columns:repeat(2,1fr)}
 .pace-grid{grid-template-columns:1fr}
 .pace-card.card-pink{transform:none}
-.reviews-grid{columns:1}
 .topbar-inner .dot{display:none}
+.review-card,.review-cta-card{min-width:calc(50% - 10px);max-width:calc(50% - 10px)}
+.carousel-arrow{display:none}
 }
 @media(min-width:769px) and (max-width:1024px){
 .product-grid{grid-template-columns:repeat(2,1fr)}
 .product-grid>:last-child{grid-column:span 2;max-width:50%;margin:0 auto}
 }
 @media(min-width:769px){
-.reviews-grid{columns:3}
+.review-card,.review-cta-card{min-width:calc(33.333% - 14px);max-width:calc(33.333% - 14px)}
 }
 </style>
 </head>
@@ -456,54 +473,57 @@ a{text-decoration:none;color:inherit}
 <section class="reviews">
 <div class="section-inner">
 <div class="reviews-header reveal">
-<div>
 <p class="section-label">What real users say</p>
 <h2 class="section-title">Real People. Real Taps. <em>Real Reactions.</em></h2>
-<p style="color:#6b4f6b;font-size:16px;margin-top:8px">104 verified reviews. 4.5 star average. Here is what Berri owners actually wrote.</p>
 </div>
-<a href="https://hellonancy.com/products/berri#looxReviews" class="reviews-link">Read all reviews →</a>
+<div class="reviews-rating-bar">
+<span class="gold">★★★★</span><span class="gold" style="position:relative;overflow:hidden;display:inline-block;width:1em"><span style="position:absolute;overflow:hidden;width:50%">★</span><span style="color:#ccc">★</span></span>
+<span class="rating-text">4.5 out of 5</span>
+<span class="rating-count">from 104 verified reviews</span>
 </div>
-<div class="reviews-grid">
+<div class="reviews-carousel-wrap">
+<button class="carousel-arrow left" onclick="document.getElementById('reviewCarousel').scrollBy({left:-320,behavior:'smooth'})" aria-label="Previous reviews">‹</button>
+<div class="reviews-carousel" id="reviewCarousel">
 <div class="review-card">
-<div class="review-top"><span class="review-stars">★★★★★</span><span class="review-tag">First Timer</span></div>
-<p class="review-text">“The first toy I’ve ever ordered. I am very happy with my purchase! The tapping sensation is perfect for me.”</p>
-<p class="review-name">— Alaina B., Verified Buyer</p>
-</div>
-<div class="review-card">
-<div class="review-top"><span class="review-stars">★★★★★</span><span class="review-tag">Lem Owner</span></div>
-<p class="review-text">“Quite simply my favourite toy, and by a mile. I was looking for something gentler than Lem and Berri delivered beyond expectation.”</p>
-<p class="review-name">— Jessica J., Verified Buyer</p>
-</div>
-<div class="review-card">
-<div class="review-top"><span class="review-stars">★★★★★</span><span class="review-tag">Couples</span></div>
-<p class="review-text">“The tapping style brought her to quick orgasm during foreplay, and she had multiple orgasms during intercourse whilst using Berri. Highly recommend.”</p>
-<p class="review-name">— Andrew, Verified Buyer</p>
-</div>
-<div class="review-card">
-<div class="review-top"><span class="review-stars">★★★★★</span><span class="review-tag">Power User</span></div>
-<p class="review-text">“This is my third piece of fruit. The pinnacle is much higher. The only downside is your neighbors might hear YOU when you finally reach the summit.”</p>
-<p class="review-name">— Yvonne H., Verified Buyer</p>
-</div>
-<div class="review-card">
-<div class="review-top"><span class="review-stars">★★★★★</span><span class="review-tag">New Favorite</span></div>
-<p class="review-text">“Berri is my absolute favorite. The closest I’ve ever gotten to the real thing. I like it even better than the Avocado and Lemon. Berri is to die for!”</p>
+<div class="review-top"><span class="review-stars">★★★★★</span><span class="review-tag">Better Than Lem</span></div>
+<p class="review-text">"Berri is <strong>my absolute favorite</strong>. The closest I've ever gotten to the real thing. I like it even better than the Avocado and Lemon. Berri is to die for!"</p>
 <p class="review-name">— Erica S., Verified Buyer</p>
 </div>
 <div class="review-card">
-<div class="review-top"><span class="review-stars">★★★★★</span><span class="review-tag">Gentle Start</span></div>
-<p class="review-text">“Excellent device! I always struggle to find something that starts off gentle enough. This is magnificent!”</p>
-<p class="review-name">— Tyrone T., Verified Buyer</p>
+<div class="review-top"><span class="review-stars">★★★★★</span><span class="review-tag">The Pinnacle</span></div>
+<p class="review-text">"This is my third piece of fruit. <strong>The pinnacle is much higher</strong>. The only downside is your neighbors might hear YOU when you finally reach the summit."</p>
+<p class="review-name">— Yvonne H., Verified Buyer</p>
 </div>
 <div class="review-card">
-<div class="review-top"><span class="review-stars">★★★★★</span><span class="review-tag">Surprised</span></div>
-<p class="review-text">“Really surprising but it absolutely works from the very first attempt. It gets me to intense heights far faster than any other toy I own. Definitely my new favorite.”</p>
+<div class="review-top"><span class="review-stars">★★★★★</span><span class="review-tag">Gentler Alternative</span></div>
+<p class="review-text">"Quite simply <strong>my favourite toy, and by a mile</strong>. I was looking for something gentler than Lem and Berri delivered beyond expectation."</p>
+<p class="review-name">— Jessica J., Verified Buyer</p>
+</div>
+<div class="review-card">
+<div class="review-top"><span class="review-stars">★★★★★</span><span class="review-tag">Worked First Try</span></div>
+<p class="review-text">"Really surprising but it <strong>absolutely works from the very first attempt</strong>. It gets me to intense heights far faster than any other toy I own. Definitely my new favorite."</p>
 <p class="review-name">— Katya T., Verified Buyer</p>
 </div>
 <div class="review-card">
-<div class="review-top"><span class="review-stars">★★★★★</span><span class="review-tag">Discreet</span></div>
-<p class="review-text">“Hits. Ahem, taps the spot! It’s whisper quiet, but you probably won’t be!”</p>
+<div class="review-top"><span class="review-stars">★★★★★</span><span class="review-tag">Whisper Quiet</span></div>
+<p class="review-text">"Hits. Ahem, <strong>taps the spot</strong>! It's whisper quiet, but you probably won't be!"</p>
 <p class="review-name">— Ilona G., Verified Buyer</p>
 </div>
+<div class="review-card">
+<div class="review-top"><span class="review-stars">★★★★★</span><span class="review-tag">First Toy Ever</span></div>
+<p class="review-text">"The first toy I've ever ordered. I am very happy with my purchase! <strong>The tapping sensation is perfect for me</strong>."</p>
+<p class="review-name">— Alaina B., Verified Buyer</p>
+</div>
+<div class="review-cta-card">
+<h3>Ready to feel it yourself?</h3>
+<a href="https://hellonancy.com/products/berri" class="cta-btn">Tap Into It, $95</a>
+<p class="cta-sub">30 day guarantee. Free shipping.</p>
+</div>
+</div>
+<button class="carousel-arrow right" onclick="document.getElementById('reviewCarousel').scrollBy({left:320,behavior:'smooth'})" aria-label="Next reviews">›</button>
+</div>
+<div class="reviews-link-bottom">
+<a href="https://hellonancy.com/products/berri#looxReviews" class="reviews-link">Read all 104 reviews →</a>
 </div>
 </div>
 </section>
@@ -634,6 +654,29 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
 }, { threshold: 0.15, rootMargin: '-40px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Reviews carousel auto-scroll
+(function(){
+  const c = document.getElementById('reviewCarousel');
+  if(!c) return;
+  let iv = setInterval(()=>{
+    if(c.scrollLeft + c.clientWidth >= c.scrollWidth - 10){
+      c.scrollTo({left:0,behavior:'smooth'});
+    } else {
+      c.scrollBy({left:320,behavior:'smooth'});
+    }
+  }, 4000);
+  c.addEventListener('mouseenter',()=>clearInterval(iv));
+  c.addEventListener('mouseleave',()=>{
+    iv = setInterval(()=>{
+      if(c.scrollLeft + c.clientWidth >= c.scrollWidth - 10){
+        c.scrollTo({left:0,behavior:'smooth'});
+      } else {
+        c.scrollBy({left:320,behavior:'smooth'});
+      }
+    }, 4000);
+  });
+})();
 </script>
 
 </body>
