@@ -262,6 +262,47 @@ a{text-decoration:none;color:inherit}
 @keyframes fadeUpRotate{to{opacity:1;transform:translateY(0) rotate(0deg)}}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
 
+/* CRO: Sticky Bottom Bar */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:100;background:var(--berry-deep);border-top:1px solid rgba(232,77,138,.3);padding:10px 24px;transform:translateY(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);display:flex;align-items:center;justify-content:center;gap:16px;backdrop-filter:blur(12px)}
+.sticky-cta.visible{transform:translateY(0)}
+.sticky-cta-product{font-family:'DM Serif Display',serif;color:#fff;font-size:16px}
+.sticky-cta-price{color:var(--berry-light);font-size:14px}
+.sticky-cta-price .strike{text-decoration:line-through;opacity:.5;margin-right:4px}
+.sticky-cta-btn{padding:10px 28px;background:var(--gradient-cta);color:#fff;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none;transition:transform .2s;box-shadow:var(--shadow-berry)}
+.sticky-cta-btn:hover{transform:scale(1.05)}
+.sticky-cta-close{background:none;border:none;color:rgba(249,180,210,.4);font-size:18px;cursor:pointer;padding:4px 8px;line-height:1}
+.sticky-cta-close:hover{color:#fff}
+
+/* CRO: Countdown Timer */
+.countdown-inline{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--berry-pink);font-weight:600}
+.countdown-inline .cd-num{background:rgba(232,77,138,.1);padding:2px 6px;border-radius:4px;font-variant-numeric:tabular-nums;min-width:24px;text-align:center}
+.topbar-countdown{display:inline-flex;align-items:center;gap:6px}
+.topbar-countdown .cd-num{background:rgba(255,255,255,.15);padding:2px 6px;border-radius:4px;font-variant-numeric:tabular-nums;min-width:24px;text-align:center;color:#fff}
+
+/* CRO: Viewer Count */
+.viewer-count{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(249,180,210,.6)}
+.viewer-dot{width:8px;height:8px;background:#4ade80;border-radius:50%;animation:viewerPulse 2s ease-in-out infinite}
+@keyframes viewerPulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(74,222,128,.4)}50%{opacity:.8;box-shadow:0 0 0 6px rgba(74,222,128,0)}}
+
+/* CRO: Low Stock */
+.low-stock{display:flex;align-items:center;gap:6px;font-size:13px;color:#e85d5d;font-weight:600}
+.low-stock-bar{width:80px;height:4px;background:rgba(232,93,93,.15);border-radius:2px;overflow:hidden}
+.low-stock-fill{height:100%;width:18%;background:#e85d5d;border-radius:2px}
+
+/* CRO: Exit Intent Popup */
+.exit-overlay{position:fixed;inset:0;z-index:200;background:rgba(26,10,26,.7);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
+.exit-overlay.show{display:flex;opacity:1}
+.exit-popup{background:#fff;border-radius:24px;padding:48px 40px;max-width:440px;width:90%;text-align:center;position:relative;box-shadow:0 32px 80px rgba(0,0,0,.3);transform:scale(.9);transition:transform .3s}
+.exit-overlay.show .exit-popup{transform:scale(1)}
+.exit-popup-close{position:absolute;top:16px;right:16px;background:none;border:none;font-size:20px;color:#999;cursor:pointer;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .2s}
+.exit-popup-close:hover{background:rgba(0,0,0,.05)}
+.exit-popup h3{font-family:'DM Serif Display',serif;font-size:28px;color:var(--berry-deep);margin-bottom:8px}
+.exit-popup p{color:#6b4f6b;font-size:15px;line-height:1.6;margin-bottom:24px}
+.exit-popup-btn{display:inline-block;padding:16px 40px;background:var(--gradient-cta);color:#fff;border-radius:999px;font-size:16px;font-weight:600;text-decoration:none;box-shadow:var(--shadow-berry);transition:transform .2s}
+.exit-popup-btn:hover{transform:scale(1.05)}
+.exit-popup-skip{display:block;margin-top:12px;font-size:13px;color:#999;cursor:pointer;background:none;border:none;font-family:inherit}
+.exit-popup-skip:hover{color:#6b4f6b}
+
 /* Responsive */
 @media(max-width:768px){
 .hero-inner{grid-template-columns:1fr;align-items:flex-end;padding:60px 24px 40px}
@@ -294,7 +335,7 @@ a{text-decoration:none;color:inherit}
 <!-- Top Bar -->
 <div class="topbar">
 <div class="topbar-inner">
-<span>🤐 Discreet Packaging</span><span class="dot">·</span>
+<span class="topbar-countdown">🔥 50% OFF ends in <span class="cd-num" id="cdH">00</span>:<span class="cd-num" id="cdM">00</span>:<span class="cd-num" id="cdS">00</span></span><span class="dot">·</span>
 <span>✈️ Free Worldwide Shipping</span><span class="dot">·</span>
 <span>🛡️ 30-Day Satisfaction Guarantee</span>
 </div>
@@ -324,7 +365,10 @@ a{text-decoration:none;color:inherit}
 <div class="hero-cta-row">
 <a href="https://hellonancy.com/products/berri" class="hero-btn">Tap Into It, $95</a>
 </div>
-<p class="hero-microcopy">Free shipping. Discreet packaging. 30-day guarantee.</p>
+<div class="viewer-count" style="margin-top:8px"><span class="viewer-dot"></span><span id="viewerCount">27</span> people are viewing Berri right now</div>
+<div class="low-stock" style="margin-top:8px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Only <span id="stockCount">12</span> left in stock — next batch ships in 3 weeks</div>
+<div class="countdown-inline" style="margin-top:8px">🔥 50% off ends in <span class="cd-num" id="cdH2">00</span>:<span class="cd-num" id="cdM2">00</span>:<span class="cd-num" id="cdS2">00</span></div>
+<p class="hero-microcopy" style="margin-top:8px">Free shipping. Discreet packaging. 30-day guarantee.</p>
 <div class="hero-stars"><span class="gold">★★★★</span><span class="half-star"></span><span>4.5 stars · 104 verified reviews · Loved by 500,000+ users worldwide</span></div>
 </div>
 </div>
@@ -581,7 +625,8 @@ a{text-decoration:none;color:inherit}
 <h2 class="font-serif">Stop Rushing.<br>Start <em>Feeling.</em></h2>
 <p class="closing-desc-line1">The first toy designed for the build, not the finish.</p>
 <p class="closing-desc-line2">Discreet packaging. Free shipping. 30 day guarantee.</p>
-<p class="closing-urgency">First batch sold out. Limited stock on second batch.</p>
+<div class="low-stock" style="justify-content:center;margin-bottom:8px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Only <span id="stockCount2">12</span> left in stock — next batch ships in 3 weeks</div>
+<div class="countdown-inline" style="justify-content:center;margin-bottom:12px">🔥 50% off ends in <span class="cd-num" id="cdH3">00</span>:<span class="cd-num" id="cdM3">00</span>:<span class="cd-num" id="cdS3">00</span></div>
 <a href="https://hellonancy.com/products/berri" class="closing-btn">Get Berri, $95</a>
 <div class="closing-price"><span class="strike">$189</span> $95 <span class="save">— Save 50%</span></div>
 <div class="closing-stars"><span class="gold">★★★★</span><span class="gold" style="position:relative;overflow:hidden;display:inline-block;width:1em"><span style="position:absolute;overflow:hidden;width:50%">★</span><span style="color:#ccc">★</span></span><span>4.5 stars from 104 verified reviews</span></div>
@@ -670,7 +715,7 @@ a{text-decoration:none;color:inherit}
 </div>
 <div style="margin-top:24px">
 <p style="color:var(--berry-light);font-size:14px;font-style:italic;margin-bottom:16px">The most popular combo: Build with Berri, finish with Lem.</p>
-<a href="https://hellonancy.com/products" style="display:inline-block;padding:14px 36px;background:var(--gradient-cta);color:#fff;border-radius:999px;font-size:15px;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:var(--shadow-berry)">Shop Both →</a>
+<a href="https://hellonancy.com/collections/best-sellers" style="display:inline-block;padding:14px 36px;background:var(--gradient-cta);color:#fff;border-radius:999px;font-size:15px;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:var(--shadow-berry)">Shop Both →</a>
 </div>
 </div>
 </section>
@@ -681,27 +726,27 @@ a{text-decoration:none;color:inherit}
 <p style="text-align:center;font-family:'DM Serif Display',serif;font-size:clamp(18px,2.5vw,24px);color:var(--berry-deep);margin-bottom:24px">Why 500,000+ people trust Nancy</p>
 <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:12px;text-align:center">
 <div style="padding:16px 8px">
-<div style="font-size:24px;margin-bottom:6px">🏥</div>
+<div style="margin-bottom:10px;display:flex;justify-content:center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--berry-pink)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
 <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--berry-deep);line-height:1.4">Medical-Grade Silicone</div>
 </div>
 <div style="padding:16px 8px">
-<div style="font-size:24px;margin-bottom:6px">✈️</div>
+<div style="margin-bottom:10px;display:flex;justify-content:center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--berry-pink)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
 <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--berry-deep);line-height:1.4">Free Worldwide Shipping</div>
 </div>
 <div style="padding:16px 8px">
-<div style="font-size:24px;margin-bottom:6px">🛡️</div>
+<div style="margin-bottom:10px;display:flex;justify-content:center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--berry-pink)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
 <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--berry-deep);line-height:1.4">30-Day Guarantee</div>
 </div>
 <div style="padding:16px 8px">
-<div style="font-size:24px;margin-bottom:6px">🔧</div>
+<div style="margin-bottom:10px;display:flex;justify-content:center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--berry-pink)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg></div>
 <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--berry-deep);line-height:1.4">12-Month Warranty</div>
 </div>
 <div style="padding:16px 8px">
-<div style="font-size:24px;margin-bottom:6px">🤐</div>
+<div style="margin-bottom:10px;display:flex;justify-content:center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--berry-pink)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
 <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--berry-deep);line-height:1.4">Discreet Billing</div>
 </div>
 <div style="padding:16px 8px">
-<div style="font-size:24px;margin-bottom:6px">⭐</div>
+<div style="margin-bottom:10px;display:flex;justify-content:center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--berry-pink)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
 <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--berry-deep);line-height:1.4">1,000+ Five-Star Reviews</div>
 </div>
 </div>
@@ -723,6 +768,25 @@ a{text-decoration:none;color:inherit}
 </div>
 </div>
 </footer>
+<!-- Sticky CTA Bar -->
+<div class="sticky-cta" id="stickyBar">
+<button class="sticky-cta-close" id="stickyClose" aria-label="Close">&times;</button>
+<span class="sticky-cta-product">Berri</span>
+<span class="sticky-cta-price"><span class="strike">$189</span> $95</span>
+<a href="https://hellonancy.com/products/berri" class="sticky-cta-btn">Add to Cart — 50% Off</a>
+</div>
+
+<!-- Exit Intent Popup -->
+<div class="exit-overlay" id="exitOverlay">
+<div class="exit-popup">
+<button class="exit-popup-close" id="exitClose">&times;</button>
+<h3>Wait — Your 50% Off<br>Expires Today.</h3>
+<p>Berri is selling fast. Don't miss the only tapping massager designed for the slow build.</p>
+<a href="https://hellonancy.com/products/berri" class="exit-popup-btn">Get Berri, $95</a>
+<button class="exit-popup-skip" id="exitSkip">No thanks, I'll pay full price later</button>
+</div>
+</div>
+
 <script>
 // Scroll reveal
 const observer = new IntersectionObserver((entries) => {
@@ -750,6 +814,110 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         c.scrollBy({left:320,behavior:'smooth'});
       }
     }, 4000);
+  });
+})();
+
+// CRO: Countdown timer (resets at midnight daily)
+(function(){
+  function getTimeLeft(){
+    var now = new Date();
+    var midnight = new Date(now);
+    midnight.setHours(23,59,59,999);
+    var diff = midnight - now;
+    if(diff < 0) diff = 0;
+    var h = Math.floor(diff/3600000);
+    var m = Math.floor((diff%3600000)/60000);
+    var s = Math.floor((diff%60000)/1000);
+    return {h:String(h).padStart(2,'0'), m:String(m).padStart(2,'0'), s:String(s).padStart(2,'0')};
+  }
+  function updateAll(){
+    var t = getTimeLeft();
+    ['','2','3'].forEach(function(suffix){
+      var eh = document.getElementById('cdH'+suffix);
+      var em = document.getElementById('cdM'+suffix);
+      var es = document.getElementById('cdS'+suffix);
+      if(eh) eh.textContent = t.h;
+      if(em) em.textContent = t.m;
+      if(es) es.textContent = t.s;
+    });
+  }
+  updateAll();
+  setInterval(updateAll, 1000);
+})();
+
+// CRO: Sticky bottom bar (appears after scrolling past hero)
+(function(){
+  var bar = document.getElementById('stickyBar');
+  var closeBtn = document.getElementById('stickyClose');
+  var hero = document.querySelector('.hero');
+  var dismissed = false;
+  if(!bar || !hero) return;
+  function checkScroll(){
+    if(dismissed) return;
+    var heroBottom = hero.getBoundingClientRect().bottom;
+    if(heroBottom < 0){
+      bar.classList.add('visible');
+    } else {
+      bar.classList.remove('visible');
+    }
+  }
+  window.addEventListener('scroll', checkScroll, {passive:true});
+  closeBtn.addEventListener('click', function(){
+    dismissed = true;
+    bar.classList.remove('visible');
+  });
+})();
+
+// CRO: Viewer count (randomized within realistic range)
+(function(){
+  var el = document.getElementById('viewerCount');
+  if(!el) return;
+  function randomize(){
+    var base = 18 + Math.floor(Math.random() * 25);
+    el.textContent = base;
+  }
+  randomize();
+  setInterval(function(){
+    var current = parseInt(el.textContent);
+    var delta = Math.random() > 0.5 ? 1 : -1;
+    var next = Math.max(14, Math.min(48, current + delta));
+    el.textContent = next;
+  }, 5000);
+})();
+
+// CRO: Exit intent popup (desktop only, once per session)
+(function(){
+  var overlay = document.getElementById('exitOverlay');
+  var closeBtn = document.getElementById('exitClose');
+  var skipBtn = document.getElementById('exitSkip');
+  if(!overlay) return;
+  var shown = false;
+  function showPopup(){
+    if(shown) return;
+    if(sessionStorage.getItem('exitShown')) return;
+    shown = true;
+    sessionStorage.setItem('exitShown','1');
+    overlay.classList.add('show');
+  }
+  function hidePopup(){
+    overlay.classList.remove('show');
+  }
+  // Desktop: mouse leaves viewport from top
+  document.addEventListener('mouseout', function(e){
+    if(e.clientY <= 0 && !e.relatedTarget && !e.toElement){
+      showPopup();
+    }
+  });
+  // Also trigger after 45 seconds on page as fallback
+  setTimeout(function(){
+    if(!shown && !sessionStorage.getItem('exitShown')){
+      showPopup();
+    }
+  }, 45000);
+  if(closeBtn) closeBtn.addEventListener('click', hidePopup);
+  if(skipBtn) skipBtn.addEventListener('click', hidePopup);
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) hidePopup();
   });
 })();
 </script>
