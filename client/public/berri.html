@@ -354,8 +354,13 @@ a{text-decoration:none;color:inherit}
 .section-title{font-size:clamp(22px,6vw,28px);margin-bottom:12px}
 .narrative-label-wrap{margin-bottom:8px}
 .narrative-grid{grid-template-columns:1fr}
-.product-grid{grid-template-columns:1fr}
-.product-card .img-wrap{max-height:200px}
+.product-grid{grid-template-columns:1fr;gap:10px;margin-top:16px}
+.product-card{flex-direction:row;padding:10px;gap:12px;border-radius:12px;align-items:center}
+.product-card .img-wrap{width:80px;min-width:80px;aspect-ratio:1/1;max-height:80px;border-radius:10px}
+.product-card .card-label{text-align:left;margin-top:0}
+.product-card .card-label h3{font-size:13px;margin-bottom:2px}
+.product-card .card-label p{font-size:11px;line-height:1.4}
+.product-card .badge{top:6px;right:6px;font-size:8px;padding:2px 6px}
 .specs-bar{grid-template-columns:repeat(2,1fr)}
 .section-inner [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}
 [style*="grid-template-columns:repeat(6"]{grid-template-columns:repeat(3,1fr) !important}
