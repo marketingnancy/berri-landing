@@ -409,11 +409,14 @@ a{text-decoration:none;color:inherit}
 .review-cta-card .cta-btn{padding:10px 24px;font-size:13px}
 .reviews-link-bottom{margin-top:16px}
 .carousel-arrow{display:none}
-.section-inner>[style*="grid-template-columns:1fr 1fr"][style*="max-width:960px"]{grid-template-columns:1fr !important;gap:20px !important}
-.section-inner>[style*="grid-template-columns:1fr 1fr"][style*="max-width:960px"]>div:last-child{order:-1}
-.section-inner>[style*="grid-template-columns:1fr 1fr"][style*="max-width:960px"] [style*="margin-top:24px"]{text-align:center}
+.section-inner>[style*="grid-template-columns:1fr 1fr"][style*="max-width:960px"]{display:flex !important;flex-direction:column !important;gap:16px !important}
+.section-inner>[style*="grid-template-columns:1fr 1fr"][style*="max-width:960px"]>div:first-child{display:contents}
+.section-inner>[style*="grid-template-columns:1fr 1fr"][style*="max-width:960px"]>div:first-child .section-label{order:1}
+.section-inner>[style*="grid-template-columns:1fr 1fr"][style*="max-width:960px"]>div:first-child .section-title{order:2}
+.section-inner>[style*="grid-template-columns:1fr 1fr"][style*="max-width:960px"]>div:last-child{order:3}
+.section-inner>[style*="grid-template-columns:1fr 1fr"][style*="max-width:960px"]>div:first-child p[style*="font-size:15px"]{order:4;font-size:13px !important;line-height:1.5 !important;margin-top:10px !important}
+.section-inner>[style*="grid-template-columns:1fr 1fr"][style*="max-width:960px"]>div:first-child [style*="margin-top:24px"]{order:5;text-align:center}
 .section-inner>[style*="grid-template-columns:1fr 1fr"][style*="max-width:960px"] [style*="padding:32px"]{padding:20px !important;border-radius:14px !important}
-.section-inner>[style*="grid-template-columns:1fr 1fr"][style*="max-width:960px"] p[style*="font-size:15px"]{font-size:13px !important;line-height:1.5 !important;margin-top:10px !important}
 .footer-grid{grid-template-columns:1fr;gap:32px}
 .footer-bottom{flex-direction:column;text-align:center}
 }
