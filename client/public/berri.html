@@ -118,22 +118,26 @@ a{text-decoration:none;color:inherit}
 .card-solution-cta .micro{font-size:12px;color:rgba(255,255,255,.45);letter-spacing:.02em}
 
 /* Product Showcase */
-.showcase{padding:112px 24px;background:var(--berry-deep);position:relative;overflow:hidden}
+.showcase{padding:50px 24px;background:var(--berry-deep);position:relative;overflow:hidden}
 .showcase::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(232,77,138,.3),transparent)}
-.showcase .section-label{color:var(--berry-pink)}
-.showcase .section-title{color:#fff}
+.showcase .section-label{color:var(--berry-pink);margin-bottom:8px}
+.showcase .section-title{color:#fff;font-size:clamp(24px,3.5vw,42px);margin-bottom:0}
 .showcase .section-title em{color:var(--berry-pink);-webkit-text-fill-color:var(--berry-pink)}
-.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:80px}
-.product-card{background:rgba(107,58,107,.3);border-radius:24px;padding:32px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;min-height:420px;position:relative}
+.product-grid{display:flex;flex-direction:column;gap:12px;margin-top:30px}
+.product-card{background:rgba(107,58,107,.3);border-radius:16px;padding:16px 20px;display:flex;flex-direction:row;align-items:center;gap:20px;min-height:auto;position:relative}
 .product-card.featured{background:linear-gradient(to bottom,rgba(232,77,138,.2),rgba(107,58,107,.2))}
-.product-card .badge{position:absolute;top:16px;right:16px;background:var(--berry-pink);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:999px;text-transform:uppercase;letter-spacing:.06em}
-.product-card .img-wrap{flex:1;display:flex;align-items:center}
-.product-card img{width:clamp(160px,14vw,220px);filter:drop-shadow(0 10px 30px rgba(0,0,0,.2))}
-.product-card .card-label{text-align:center;margin-top:24px}
-.product-card .card-label h3{color:#fff;font-weight:600;font-size:18px;margin-bottom:4px}
-.product-card .card-label p{color:rgba(249,180,210,.6);font-size:14px}
-.specs-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
-.spec{background:rgba(255,255,255,.05);backdrop-filter:blur(8px);border-radius:12px;padding:16px 20px;text-align:center}
+.product-card .badge{position:absolute;top:10px;right:12px;background:var(--berry-pink);color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:999px;text-transform:uppercase;letter-spacing:.06em}
+.product-card .img-wrap{flex:0 0 40%;max-width:40%;display:flex;align-items:center;justify-content:center}
+.product-card .img-wrap img,.product-card .img-wrap video{width:100%;max-height:140px;object-fit:cover;border-radius:12px;filter:drop-shadow(0 6px 20px rgba(0,0,0,.2))}
+.product-card .card-label{flex:1;text-align:left;margin-top:0}
+.product-card .card-label h3{color:#fff;font-weight:600;font-size:16px;margin-bottom:4px}
+.product-card .card-label p{color:rgba(249,180,210,.6);font-size:13px;line-height:1.5}
+.specs-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.spec{background:rgba(255,255,255,.05);backdrop-filter:blur(8px);border-radius:10px;padding:12px 16px;text-align:center}
+.showcase-cta-wrap{text-align:center;margin-top:24px}
+.showcase-cta-btn{display:inline-block;padding:14px 40px;background:var(--gradient-cta);color:#fff;border-radius:999px;font-size:16px;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:var(--shadow-berry)}
+.showcase-cta-btn:hover{transform:scale(1.05);box-shadow:0 8px 32px rgba(232,77,138,.4)}
+.showcase-micro{font-size:12px;color:rgba(249,180,210,.4);margin-top:8px}
 .spec .spec-label{color:rgba(249,180,210,.4);font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
 .spec .spec-value{color:#fff;font-weight:600;font-size:14px}
 
@@ -266,7 +270,9 @@ a{text-decoration:none;color:inherit}
 .narrative-top{grid-template-columns:1fr}
 .narrative-lifestyle{order:-1}
 .narrative-grid{grid-template-columns:1fr}
-.product-grid{grid-template-columns:1fr}
+.product-card{flex-direction:column;text-align:center}
+.product-card .img-wrap{flex:0 0 auto;max-width:100%}
+.product-card .card-label{text-align:center}
 .specs-bar{grid-template-columns:repeat(2,1fr)}
 .pace-grid{grid-template-columns:1fr}
 .pace-card.card-pink{transform:none}
@@ -275,8 +281,7 @@ a{text-decoration:none;color:inherit}
 .carousel-arrow{display:none}
 }
 @media(min-width:769px) and (max-width:1024px){
-.product-grid{grid-template-columns:repeat(2,1fr)}
-.product-grid>:last-child{grid-column:span 2;max-width:50%;margin:0 auto}
+
 }
 @media(min-width:769px){
 .review-card,.review-cta-card{min-width:calc(33.333% - 14px);max-width:calc(33.333% - 14px)}
@@ -422,17 +427,17 @@ a{text-decoration:none;color:inherit}
 <div class="section-inner">
 <div class="product-grid reveal">
 <div class="product-card">
-<div class="img-wrap"><video src="https://d2xsxph8kpxj0f.cloudfront.net/310519663037635287/TefqpEWTkycJeNJz9rmhNF/berriwaterproof_0b021a22.mp4" autoplay loop muted playsinline style="width:clamp(160px,14vw,220px);border-radius:16px;filter:drop-shadow(0 10px 30px rgba(0,0,0,.2))"></video></div>
-<div class="card-label"><h3>Waterproof</h3><p>IPX7 rated. Bath-ready, shower-safe. Easy to clean with warm water and gentle soap.</p></div>
+<div class="img-wrap"><video src="https://d2xsxph8kpxj0f.cloudfront.net/310519663037635287/TefqpEWTkycJeNJz9rmhNF/berriwaterproof_0b021a22.mp4" autoplay loop muted playsinline></video></div>
+<div class="card-label"><h3>Waterproof</h3><p>IPX7 rated. Bath ready, shower safe.</p></div>
 </div>
 <div class="product-card featured">
 <span class="badge">12 patterns</span>
-<div class="img-wrap"><video src="https://d2xsxph8kpxj0f.cloudfront.net/310519663037635287/TefqpEWTkycJeNJz9rmhNF/berri-product-5_bab718ab.mp4" autoplay loop muted playsinline style="width:clamp(160px,14vw,220px);border-radius:16px;filter:drop-shadow(0 10px 30px rgba(0,0,0,.2))"></video></div>
-<div class="card-label"><h3>12 Unique Rhythms</h3><p>Each pattern has its own personality. Some are slow and teasing. Some are fast and relentless. Explore all twelve until you find the one that makes you forget what day it is.</p></div>
+<div class="img-wrap"><video src="https://d2xsxph8kpxj0f.cloudfront.net/310519663037635287/TefqpEWTkycJeNJz9rmhNF/berri-product-5_bab718ab.mp4" autoplay loop muted playsinline></video></div>
+<div class="card-label"><h3>12 Unique Rhythms</h3><p>Each pattern has its own personality. Explore all twelve.</p></div>
 </div>
 <div class="product-card">
-<div class="img-wrap"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663037635287/TefqpEWTkycJeNJz9rmhNF/berri-product-4_860f35d1.png" alt="Berri USB-C charging"></div>
-<div class="card-label"><h3>120 Minutes</h3><p>Weeks of play on a single USB-C charge. No dead batteries. No interrupted sessions. Berri is ready when you are. Every single time.</p></div>
+<div class="img-wrap"><video src="https://d2xsxph8kpxj0f.cloudfront.net/310519663037635287/TefqpEWTkycJeNJz9rmhNF/Hailuo_Video_Awarmglowbehindtheproduct_485087881628061696_978b6fa3.mp4" autoplay loop muted playsinline></video></div>
+<div class="card-label"><h3>120 Minutes</h3><p>Weeks of play on a single USB-C charge. Always ready.</p></div>
 </div>
 </div>
 <div class="specs-bar">
@@ -440,6 +445,10 @@ a{text-decoration:none;color:inherit}
 <div class="spec"><p class="spec-label">Size</p><p class="spec-value">6.9 × 6.9 cm</p></div>
 <div class="spec"><p class="spec-label">Charge Time</p><p class="spec-value">90 min</p></div>
 <div class="spec"><p class="spec-label">Noise Level</p><p class="spec-value">< 40 dB</p></div>
+</div>
+<div class="showcase-cta-wrap">
+<a href="https://hellonancy.com/products/berri" class="showcase-cta-btn">Tap Into It, $95</a>
+<p class="showcase-micro">Free shipping. Discreet packaging. 30 day guarantee.</p>
 </div>
 </div>
 </section>
