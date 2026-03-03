@@ -359,8 +359,14 @@ a{text-decoration:none;color:inherit}
 .specs-bar{grid-template-columns:repeat(2,1fr)}
 .section-inner [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}
 [style*="grid-template-columns:repeat(6"]{grid-template-columns:repeat(3,1fr) !important}
-.pace-grid{grid-template-columns:1fr}
-.pace-card.card-pink{transform:none}
+.pace-grid{grid-template-columns:1fr;gap:12px;margin-top:20px}
+.pace-card{padding:14px 16px;border-radius:12px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.pace-card .pace-icon{font-size:22px;line-height:1;margin:0}
+.pace-card .pace-time{font-size:22px;margin:0}
+.pace-card .pace-name{font-size:13px;margin:0}
+.pace-card .pace-desc{font-size:12px;line-height:1.5;width:100%;margin-top:4px}
+.pace-card .pace-popular{font-size:10px;margin-top:4px}
+.pace-card.card-pink{transform:none;padding:16px 18px}
 .topbar-inner .dot{display:none}
 .topbar-inner>span:not(.topbar-countdown){display:none}
 .topbar{padding:8px 16px}
