@@ -273,6 +273,8 @@ a{text-decoration:none;color:inherit}
 .product-grid{grid-template-columns:1fr}
 .product-card .img-wrap{max-height:200px}
 .specs-bar{grid-template-columns:repeat(2,1fr)}
+.section-inner [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}
+[style*="grid-template-columns:repeat(6"]{grid-template-columns:repeat(3,1fr) !important}
 .pace-grid{grid-template-columns:1fr}
 .pace-card.card-pink{transform:none}
 .topbar-inner .dot{display:none}
@@ -592,66 +594,116 @@ a{text-decoration:none;color:inherit}
 </div>
 </section>
 
-<!-- Bonus: The Science of Tapping -->
-<section class="section" style="background:#fff">
-<div class="section-inner reveal" style="max-width:780px">
+<!-- Science of Tapping — Two-column with visual -->
+<section style="padding:70px 24px;background:#fff">
+<div class="section-inner reveal">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:960px;margin:0 auto">
+<div>
 <p class="section-label">Why tapping works</p>
-<h2 class="section-title">Your Nerves Were Not Designed for <em>Brute Force.</em></h2>
-<p style="color:#6b4f6b;font-size:clamp(16px,1.4vw,18px);line-height:1.7">Your clitoris contains over 8,000 nerve endings. That is more than any other part of the human body. These nerve endings respond best to varied, rhythmic stimulation — not constant, unvarying pressure. When a vibrator delivers the same signal over and over, your nerves adapt. They stop responding. You feel less, not more. This is called sensory adaptation, and it is the reason you keep turning the intensity up.</p>
-<p style="color:#6b4f6b;font-size:clamp(16px,1.4vw,18px);line-height:1.7;margin-top:16px">Tapping works differently. Each micro-tap is a separate stimulus. Your nerves do not adapt because the signal keeps changing. Pressure on. Pressure off. Pressure on. Your body stays responsive. Arousal keeps building instead of plateauing. This is not marketing language. It is how your nervous system works. And Berri’s TapSphere™ Technology is the first consumer product designed around it.</p>
+<h2 class="section-title" style="font-size:clamp(28px,3.5vw,42px)">Your Nerves Weren't Built for <em>Brute Force.</em></h2>
+<p style="color:#6b4f6b;font-size:15px;line-height:1.7;margin-top:16px">8,000 nerve endings. When a vibrator delivers the same signal over and over, they adapt and stop responding. You feel less, not more.</p>
+<p style="color:#6b4f6b;font-size:15px;line-height:1.7;margin-top:12px">Tapping is different. Each micro-tap is a new stimulus. Your nerves stay responsive. Arousal builds instead of plateauing. That's the science behind TapSphere™.</p>
+<div style="margin-top:24px">
+<a href="https://hellonancy.com/products/berri" style="display:inline-block;padding:14px 36px;background:var(--gradient-cta);color:#fff;border-radius:999px;font-size:15px;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:var(--shadow-berry)">Feel the Difference, $95</a>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:0">
+<!-- Vibration vs Tapping visual -->
+<div style="background:var(--berry-cream);border-radius:18px;padding:32px;text-align:center">
+<p style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#999;margin-bottom:16px">Vibration vs Tapping</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+<div>
+<div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--berry-deep);margin-bottom:12px">Vibration</div>
+<svg viewBox="0 0 200 60" style="width:100%;height:60px">
+<line x1="0" y1="30" x2="200" y2="30" stroke="#ccc" stroke-width="1" stroke-dasharray="4"/>
+<path d="M0,30 Q10,10 20,30 Q30,50 40,30 Q50,10 60,30 Q70,50 80,30 Q90,10 100,30 Q110,50 120,30 Q130,10 140,30 Q150,50 160,30 Q170,10 180,30 Q190,50 200,30" fill="none" stroke="#999" stroke-width="2"/>
+</svg>
+<p style="font-size:11px;color:#999;margin-top:8px">Same signal. Nerves adapt.</p>
+</div>
+<div>
+<div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--berry-pink);margin-bottom:12px">Tapping</div>
+<svg viewBox="0 0 200 60" style="width:100%;height:60px">
+<line x1="0" y1="30" x2="200" y2="30" stroke="#ccc" stroke-width="1" stroke-dasharray="4"/>
+<path d="M0,50 L10,50 L10,15 L20,15 L20,50 L35,50 L35,10 L45,10 L45,50 L65,50 L65,20 L75,20 L75,50 L85,50 L85,8 L95,8 L95,50 L115,50 L115,18 L125,18 L125,50 L135,50 L135,5 L145,5 L145,50 L165,50 L165,12 L175,12 L175,50 L185,50 L185,3 L195,3 L195,50 L200,50" fill="none" stroke="var(--berry-pink)" stroke-width="2.5"/>
+</svg>
+<p style="font-size:11px;color:var(--berry-pink);margin-top:8px">Each tap is new. Sensation builds.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
 
-<!-- Bonus: Who Is Berri For -->
-<section class="section" style="background:var(--berry-cream)">
-<div class="section-inner reveal" style="max-width:780px">
-<h2 class="section-title">Berri Works for <em>You</em> If…</h2>
-<div style="color:#6b4f6b;font-size:clamp(16px,1.4vw,18px);line-height:1.8;margin-top:24px">
-<p>• You have tried vibrators and they leave you feeling numb before you finish.</p>
-<p>• You find suction toys too intense or too fast.</p>
-<p>• You are buying your first toy and want something that starts gentle.</p>
-<p>• You enjoy edging and want a tool that supports the build.</p>
-<p>• You use toys with a partner and want something quiet and unobtrusive.</p>
-<p>• You own other Nancy products and want a different sensation to add to your collection.</p>
-<p>• You want a longer session, not a faster one.</p>
-<p>• You have been told you are hard to please. You are not. You just have not found the right stimulation yet.</p>
+<!-- Berri vs Lem Comparison Table -->
+<section style="padding:70px 24px;background:var(--berry-deep)">
+<div class="section-inner reveal" style="max-width:860px;margin:0 auto;text-align:center">
+<p class="section-label" style="color:var(--berry-pink)">Two products. Two experiences.</p>
+<h2 class="section-title" style="color:#fff;font-size:clamp(28px,3.5vw,42px)">Which Nancy Is <em>Right for You?</em></h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:32px;border-radius:18px;overflow:hidden">
+<!-- Berri Column -->
+<div style="background:rgba(232,77,138,.12);padding:32px 24px;border-right:1px solid rgba(255,255,255,.08)">
+<div style="font-family:'DM Serif Display',serif;font-size:28px;color:#fff;margin-bottom:4px">Berri</div>
+<div style="font-size:12px;color:var(--berry-light);text-transform:uppercase;letter-spacing:.08em;margin-bottom:24px">Tapping</div>
+<div style="display:flex;flex-direction:column;gap:16px;text-align:left">
+<div style="border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:12px"><span style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:rgba(249,180,210,.4)">Technology</span><p style="color:#fff;font-size:14px;font-weight:500;margin-top:4px">Rhythmic micro-taps</p></div>
+<div style="border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:12px"><span style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:rgba(249,180,210,.4)">Session Length</span><p style="color:#fff;font-size:14px;font-weight:500;margin-top:4px">30 – 90+ minutes</p></div>
+<div style="border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:12px"><span style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:rgba(249,180,210,.4)">Intensity</span><p style="color:#fff;font-size:14px;font-weight:500;margin-top:4px">Gradual build</p></div>
+<div style="border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:12px"><span style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:rgba(249,180,210,.4)">Best For</span><p style="color:#fff;font-size:14px;font-weight:500;margin-top:4px">Edging, slow burn, depth</p></div>
+<div><span style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:rgba(249,180,210,.4)">Patterns</span><p style="color:#fff;font-size:14px;font-weight:500;margin-top:4px">12 rhythmic patterns</p></div>
+</div>
+<a href="https://hellonancy.com/products/berri" style="display:inline-block;margin-top:24px;padding:12px 28px;background:var(--gradient-cta);color:#fff;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none;transition:transform .2s;box-shadow:var(--shadow-berry)">Get Berri, $95</a>
+</div>
+<!-- Lem Column -->
+<div style="background:rgba(107,58,107,.2);padding:32px 24px">
+<div style="font-family:'DM Serif Display',serif;font-size:28px;color:#fff;margin-bottom:4px">Lem</div>
+<div style="font-size:12px;color:var(--berry-light);text-transform:uppercase;letter-spacing:.08em;margin-bottom:24px">Suction</div>
+<div style="display:flex;flex-direction:column;gap:16px;text-align:left">
+<div style="border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:12px"><span style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:rgba(249,180,210,.4)">Technology</span><p style="color:#fff;font-size:14px;font-weight:500;margin-top:4px">Air pulse suction</p></div>
+<div style="border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:12px"><span style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:rgba(249,180,210,.4)">Session Length</span><p style="color:#fff;font-size:14px;font-weight:500;margin-top:4px">3 – 15 minutes</p></div>
+<div style="border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:12px"><span style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:rgba(249,180,210,.4)">Intensity</span><p style="color:#fff;font-size:14px;font-weight:500;margin-top:4px">Fast and direct</p></div>
+<div style="border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:12px"><span style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:rgba(249,180,210,.4)">Best For</span><p style="color:#fff;font-size:14px;font-weight:500;margin-top:4px">Quick intensity, power</p></div>
+<div><span style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:rgba(249,180,210,.4)">Patterns</span><p style="color:#fff;font-size:14px;font-weight:500;margin-top:4px">10 suction modes</p></div>
+</div>
+<a href="https://hellonancy.com/products/lem" style="display:inline-block;margin-top:24px;padding:12px 28px;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:999px;font-size:14px;font-weight:600;text-decoration:none;transition:transform .2s">Shop Lem</a>
+</div>
+</div>
+<div style="margin-top:24px">
+<p style="color:var(--berry-light);font-size:14px;font-style:italic;margin-bottom:16px">The most popular combo: Build with Berri, finish with Lem.</p>
+<a href="https://hellonancy.com/products" style="display:inline-block;padding:14px 36px;background:var(--gradient-cta);color:#fff;border-radius:999px;font-size:15px;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:var(--shadow-berry)">Shop Both →</a>
 </div>
 </div>
 </section>
 
-<!-- Bonus: Berri vs Lem Comparison -->
-<section class="section" style="background:#fff">
-<div class="section-inner reveal" style="max-width:780px">
-<h2 class="section-title">Which Nancy Is <em>Right for You?</em></h2>
-<p style="color:#6b4f6b;font-size:clamp(16px,1.4vw,18px);line-height:1.7;margin-top:24px">Lem and Berri are not competitors. They are designed for completely different experiences.</p>
-<p style="color:#6b4f6b;font-size:clamp(16px,1.4vw,18px);line-height:1.7;margin-top:16px"><strong style="color:var(--berry-deep)">Lem</strong> uses air suction. It creates a vacuum around the clitoris and delivers intense, focused pulses. Most sessions last 3 to 15 minutes. It is fast, direct, and powerful. Best for when you want to get there quickly and with intensity.</p>
-<p style="color:#6b4f6b;font-size:clamp(16px,1.4vw,18px);line-height:1.7;margin-top:16px"><strong style="color:var(--berry-deep)">Berri</strong> uses rhythmic tapping. It delivers precise micro-taps that build arousal gradually. Most sessions last 30 to 90 minutes. It is slow, controlled, and deeply satisfying. Best for when you want to take your time and feel every wave.</p>
-<p style="color:#6b4f6b;font-size:clamp(16px,1.4vw,18px);line-height:1.7;margin-top:16px">Many customers own both. The most popular combination is building with Berri for 20 to 30 minutes, then switching to Lem to finish. The shift from tapping to suction creates a contrast that users describe as one of the most intense experiences they have had.</p>
-<p style="color:#6b4f6b;font-size:clamp(16px,1.4vw,18px);line-height:1.7;margin-top:16px">If you had to pick one: choose Lem for intensity. Choose Berri for depth. Choose both if you want it all.</p>
+<!-- Trust Bar -->
+<section style="padding:40px 24px;background:var(--berry-cream)">
+<div class="section-inner reveal" style="max-width:960px;margin:0 auto">
+<p style="text-align:center;font-family:'DM Serif Display',serif;font-size:clamp(18px,2.5vw,24px);color:var(--berry-deep);margin-bottom:24px">Why 500,000+ people trust Nancy</p>
+<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:12px;text-align:center">
+<div style="padding:16px 8px">
+<div style="font-size:24px;margin-bottom:6px">🏥</div>
+<div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--berry-deep);line-height:1.4">Medical-Grade Silicone</div>
 </div>
-</section>
-
-<!-- Bonus: What Arrives At Your Door -->
-<section class="section" style="background:var(--berry-cream)">
-<div class="section-inner reveal" style="max-width:780px">
-<h2 class="section-title">Unboxing <em>Berri</em></h2>
-<p style="color:#6b4f6b;font-size:clamp(16px,1.4vw,18px);line-height:1.7;margin-top:24px">Every Berri order arrives in a plain, unmarked box. No logos. No product names. No indication of what is inside. Your delivery person does not know. Your roommate does not know.</p>
-<p style="color:#6b4f6b;font-size:clamp(16px,1.4vw,18px);line-height:1.7;margin-top:16px">Inside you will find the Berri tapping massager, a USB-C magnetic charging cable, and self-love manuals that walk you through every setting and technique. The charging cable connects magnetically, so there is no exposed port. Just snap it on and charge for 90 minutes. That gives you 120 minutes of play time, which for most users lasts weeks between charges.</p>
-<p style="color:#6b4f6b;font-size:clamp(16px,1.4vw,18px);line-height:1.7;margin-top:16px">Berri also pairs perfectly with the Nancy Pleasure Pouch — a travel-friendly case designed to keep your toy clean and discreet wherever you go.</p>
+<div style="padding:16px 8px">
+<div style="font-size:24px;margin-bottom:6px">✈️</div>
+<div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--berry-deep);line-height:1.4">Free Worldwide Shipping</div>
 </div>
-</section>
-
-<!-- Bonus: Trust Section -->
-<section class="section" style="background:#fff">
-<div class="section-inner reveal" style="max-width:780px">
-<h2 class="section-title">Why 500,000+ People <em>Trust Nancy</em></h2>
-<div style="color:#6b4f6b;font-size:clamp(16px,1.4vw,18px);line-height:1.8;margin-top:24px">
-<p>• Every Nancy product uses 100% medical-grade silicone. No cheap plastics. No questionable materials. Body-safe, hypoallergenic, and built to last.</p>
-<p style="margin-top:12px">• Free worldwide shipping on every Berri order. No hidden fees. No surprise customs charges. The price you see is the price you pay.</p>
-<p style="margin-top:12px">• 30-day satisfaction guarantee. If Berri is not right for you, we will make it right. No judgment.</p>
-<p style="margin-top:12px">• 12-month warranty. If anything goes wrong with your product, we replace it at no cost.</p>
-<p style="margin-top:12px">• Discreet billing. The charge on your statement will not reveal what you purchased.</p>
-<p style="margin-top:12px">• 1,000+ five-star reviews across all products. 104 verified reviews on Berri alone.</p>
+<div style="padding:16px 8px">
+<div style="font-size:24px;margin-bottom:6px">🛡️</div>
+<div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--berry-deep);line-height:1.4">30-Day Guarantee</div>
+</div>
+<div style="padding:16px 8px">
+<div style="font-size:24px;margin-bottom:6px">🔧</div>
+<div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--berry-deep);line-height:1.4">12-Month Warranty</div>
+</div>
+<div style="padding:16px 8px">
+<div style="font-size:24px;margin-bottom:6px">🤐</div>
+<div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--berry-deep);line-height:1.4">Discreet Billing</div>
+</div>
+<div style="padding:16px 8px">
+<div style="font-size:24px;margin-bottom:6px">⭐</div>
+<div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--berry-deep);line-height:1.4">1,000+ Five-Star Reviews</div>
+</div>
 </div>
 </div>
 </section>
